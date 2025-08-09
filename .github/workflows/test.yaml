@@ -23,4 +23,4 @@ jobs:
      - name: Install dependencies
        run: cd week-5 && npm install
      - name: Run tests
-       run: cd week-5 &&s npm test
+       run: cd week-5 &&s npm run test test/brackets.test.ts

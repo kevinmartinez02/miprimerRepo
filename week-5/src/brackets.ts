@@ -20,6 +20,6 @@ export function balancedBrackets(str:string) {
             }
         }
     }
-    
-    return stack.length === 0; // All opening brackets must be closed
+
+    return stack.length === 0; 
 }
