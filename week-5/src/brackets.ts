@@ -4,7 +4,7 @@ export function balancedBrackets(str:string) {
     const openingBrackets = '({[';
     const closingBrackets = ')}]';
     const bracketPairs = {
-        '(': ')',
+       // '(': '',
         '{': '}',
         '[': ']'
     } as any;
