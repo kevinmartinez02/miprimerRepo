@@ -21,6 +21,6 @@ jobs:
          node-version: '20'
 
      - name: Install dependencies
-       run: npm install
+       run: cd week-5 && npm install
      - name: Run tests
-       run: npm test
+       run: cd week-5 &&s npm test
