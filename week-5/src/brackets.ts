@@ -16,10 +16,9 @@ export function balancedBrackets(str:string) {
         } else if (closingBrackets.includes(char)) {
             const lastOpening = stack.pop() ;
             if (!lastOpening || bracketPairs[lastOpening] !== char) {
-                return false; // Mismatched brackets
+                return false; 
             }
         }
     }
-
     return stack.length === 0; 
 }
