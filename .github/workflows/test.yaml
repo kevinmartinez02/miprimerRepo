@@ -1,27 +1,30 @@
-name: Run unit test
+name: Run unit tests
 
-on: 
+on:
   push:
-    branches:
-      - main
-    paths: 
+    branches: [main]
+    paths:
       - 'week-5/**'
 
-jobs: 
-  test: 
+jobs:
+  test:
     runs-on: ubuntu-latest
 
-    steps: 
-     - name: Checkout code 
-       uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-     - name: Set up Node.js
-       uses: actions/setup-node@v4
-       with:
-         node-version: '20'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'week-5/package-lock.json'
 
-     - name: Install dependencies
-       run: cd week-5 && npm install
+      - name: Install dependencies
+        working-directory: week-5
+        run: npm ci
 
-     - name: Run tests
-       run: cd week-5 && npm run test test/brackets.test.ts
+      - name: Run tests
+        working-directory: week-5
+        run: npm test -- test/brackets.test.ts test/isMultiple.test.ts
